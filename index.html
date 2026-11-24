@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viweport">
-    <title>Portifólio</title>
+    <title>CV</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
 </head>
 <body>
     <header class="cabeçalho">
-        <h1>Bem vindo(a) ao meu portifólio</h1>
+        <h1>Currículo de Vida</h1>
         <nav>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#formação">Formação</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="#redes">Redes Sociais</a></li>
             </ul>
         </nav>
     </header>
@@ -24,15 +24,13 @@
     <section id="sobre">
         <div class="container">
             <div class="sobre-mim">
-                <img src="foto de perfil.jpg" class="foto-perfil">
+                <img src="imagens/foto de perfil.jpg" class="foto-perfil">
                 <div class="sobre-informacoes">
-                    <h2>Sobre Mim</h2>
+                    <h2>Sobre Mim 👨‍💻</h2>
                     <h3>Nome: Eduardo Moretti Varotti<br>
                         Data de Nascimento: 17/09/2009<br>
-                       Idade: 16<br>
                        Cidade atual: Amparo-SP<br>
                        Cidade natal: Campinas-SP<br>
-                       <img src="Homem escrevendo.gif" class="gif">
                     </h3>
                 </div>
             </div>
@@ -41,15 +39,19 @@
 
     <section id="formação">
         <div class="container">
-            <h2>Formação</h2>
+            <h2>Formação 🎓</h2>
             <div class="cards">
                 <div class="card">
-                    <img src="Sesi-SP.jpg" class="logos">
+                    <img src="imagens/Sesi-SP.jpg" class="logos">
                     <p>Atualmente estudando no <i>SESI</i> de Amparo</p>
                 </div>
                 <div class="card">
-                    <img src="senai.png" class="logos">
+                    <img src="imagens/senai.png" class="logos">
                     <p>Técnico em desenvolvimento de sistemas</p>
+                </div>
+                <div class="card">
+                    <h1>🎓</h1>
+                    <p>Cursando o 2º ano do Ensino Médio</p>
                 </div>
             </div>
         </div>
@@ -57,7 +59,7 @@
 
     <section id="hobbies">
         <div class="container">
-            <h2>Meus Hobbies</h2>
+            <h2>Meus Hobbies 🖥️</h2>
             <div class="hobbies">
                 <div class="hobby">
                     <i class="fa-solid fa-computer"></i>
@@ -78,26 +80,31 @@
         </div>
     </section>
     
-    <section id="contato">
+    <section id="projetos">
         <div class="container">
-            <h2>Contate-me</h2>
-            <form>
-                <label>Nome: </label>
-                <input type="text" id="nome" required>
-                <label>Email: </label>
-                <input type="email" id="email" required>
-                <label>Mensagem: </label>
-                <textarea id="mensagem" required></textarea>
-                <button class="cabeçalho" type="submit">Enviar</button>
-            </form>
+            <h2>Projetos 📢</h2>
+            <div class="card">
+                <p>Participei da seleção da OBR em 2025</p><br>
+                <img src="imagens/obr.png" alt="obr" class="obr">
+            </div>
+            <div class="card">
+                <p>Me apresentei na orquestra da Escola das Artes de Amparo em 2025</p><br>
+                <img src="imagens/orquestra.png" alt="obr" class="obr">
+            </div>
         </div>
     </section>
 
-       <section id="redes">
+    <section id="contato">
         <div class="container">
-            <h2>Redes Sociais</h2>
-
-<ul class="wrapper">
+            <h2>Contate-me ☎️</h2>
+            <img src="imagens/contato.jpg" alt="imagem-contato">
+            <br>
+            <br>
+            <center>
+                <b>Email</b>
+                <p>eduardo.varotti@portalsesisp.org.br</p>
+            </center>
+    <ul class="wrapper">
   <!-- GitHub -->
   <li class="icon github">
     <span class="tooltip">GitHub</span>
@@ -145,9 +152,9 @@
   </li>
 </ul>
 
-
         </div>
     </section>
+
     <footer>
         <p class="cabeçalho">&copy;2026 Meu Portifolio</p>
     </footer>

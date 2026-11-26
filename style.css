@@ -1,13 +1,35 @@
+:root {
+    --accent: #83c3ff;
+    --accent-strong: rgb(119, 189, 255);
+    --surface: #070707;
+    --section-surface: rgba(0, 0, 0, 0.54);
+    --text: #ffffff;
+    --radius: 8px;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.65);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
-    color: #ffffff;
 }
 
 body {
-    background: radial-gradient(circle, rgba(119, 112, 255, 1) 0%, rgba(119, 0, 255, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    min-height: 100vh;
+    color: var(--text);
+    background: radial-gradient(
+        circle,
+        rgba(119, 112, 255, 1) 0%,
+        rgba(119, 0, 255, 1) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
 }
 
 .cabeçalho {
@@ -15,54 +37,59 @@ body {
 }
 
 header {
-    padding: 16px 0;
+    padding: 16px;
     text-align: center;
 }
 
 header h1 {
-    color: rgb(119, 189, 255);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    color: var(--accent-strong);
 }
 
 nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
     list-style: none;
-    padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
 }
 
 nav ul li a {
+    color: var(--text);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: rgb(131, 195, 255);
-    cursor: pointer;
+nav ul li a:hover,
+nav ul li a:focus-visible {
+    color: var(--accent);
 }
 
-/* Seções */
 section {
-    padding: 32px;
+    display: flex;
     margin: 16px;
-    background: #00000089;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    padding: 32px;
+    background: var(--section-surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
 .container {
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 h2 {
-    margin-bottom: 16px;
-    color: rgb(131, 195, 255);
     display: flex;
     justify-content: center;
+    margin-bottom: 16px;
+    color: var(--accent);
+    text-align: center;
 }
 
 .sobre-mim {
@@ -74,35 +101,42 @@ h2 {
 .foto-perfil {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
     border: 4px solid #333;
+    border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
 .foto-perfil:hover {
-    transform: scale(1.05);
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
 }
 
 .card {
-    background: #070707;
-    border-radius: 8px;
-    padding: 20px;
     width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: var(--surface);
+    border-radius: var(--radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    margin: 10px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    margin: 15px;
 }
 
 .card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     background-color: rgba(131, 195, 255, 0.46);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
 }
 
 .hobbies {
@@ -114,22 +148,26 @@ h2 {
 .hobby {
     display: flex;
     align-items: center;
-    background: #000;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     gap: 14px;
-    transition: transform 0.3s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+    padding: 20px;
+    background: #000;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.4s ease,
+        background-color 0.3s ease;
 }
 
-.hobby i, .hobby p {
-    color: #3f4e58;
+.hobby i,
+.hobby p {
+    color: #b8c4cc;
 }
 
 .hobby:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     background-color: rgba(131, 195, 255, 0.868);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px);
 }
 
 form {
@@ -139,50 +177,52 @@ form {
 
 input,
 textarea {
-    color: black;
     width: 100%;
     padding: 8px;
-    border: 1px solid #000000;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
     border-radius: 4px;
 }
 
 footer {
-    color: #fff;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    text-align: center;
+}
+
+footer p {
+    padding: 12px;
 }
 
 .logos {
     width: 120px;
     height: auto;
-    background-color: white;
+    background-color: #fff;
 }
 
-/* From Uiverse.io by david-mohseni */
 .wrapper {
-    display: inline-flex;
-    list-style: none;
-    height: 120px;
+    display: flex;
     width: 100%;
-    padding-top: 40px;
-    font-family: "Poppins", sans-serif;
+    height: auto;
+    min-height: 120px;
     justify-content: center;
+    align-items: center;
+    padding: 32px 0 16px;
+    list-style: none;
+    font-family: "Poppins", Arial, sans-serif;
 }
 
 .wrapper .icon {
     position: relative;
-    background: #000000;
-    border-radius: 50%;
-    margin: 10px;
+    display: flex;
     width: 50px;
     height: 50px;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
+    margin: 10px;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    background: #000;
+    border-radius: 50%;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -191,12 +231,12 @@ footer {
 .wrapper .tooltip {
     position: absolute;
     top: 0;
-    font-size: 14px;
-    background: #fff;
-    color: #000;
     padding: 5px 8px;
+    color: #000;
+    background: #fff;
     border-radius: 5px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -204,12 +244,12 @@ footer {
 
 .wrapper .tooltip::before {
     position: absolute;
-    content: "";
-    height: 8px;
-    width: 8px;
-    background: #fff;
     bottom: -3px;
     left: 50%;
+    width: 8px;
+    height: 8px;
+    content: "";
+    background: #fff;
     transform: translate(-50%) rotate(45deg);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -223,40 +263,104 @@ footer {
 
 .wrapper .icon:hover span,
 .wrapper .icon:hover .tooltip {
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
-/* GitHub */
 .wrapper .github:hover,
 .wrapper .github:hover .tooltip,
 .wrapper .github:hover .tooltip::before {
-    background: #333;
     color: #fff;
+    background: #333;
 }
 
-/* WhatsApp */
 .wrapper .whatsapp:hover,
 .wrapper .whatsapp:hover .tooltip,
 .wrapper .whatsapp:hover .tooltip::before {
-    background: #25d366;
     color: #fff;
+    background: #25d366;
 }
 
-/* Instagram */
 .wrapper .instagram:hover,
 .wrapper .instagram:hover .tooltip,
 .wrapper .instagram:hover .tooltip::before {
+    color: #fff;
     background: #e4405f;
-    color: #000;
 }
 
 #contato img {
+    display: block;
     width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: var(--radius);
 }
 
-.obr{
-    width: 100px;
+#contato center {
+    margin-top: 16px;
 }
-.quimica{
-    width: 300px;
+
+.obr,
+.quimica {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 700px) {
+    section {
+        margin: 12px 8px;
+        padding: 24px 16px;
+    }
+
+    .sobre-mim {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hobby {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .hobby h3,
+    .hobby p {
+        width: 100%;
+    }
+
+    .obr,
+    .quimica {
+        max-width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.links {
+    display: flex;
+    margin-left: 380px;
+    gap: 15px;
+}
+a {
+    color: #fff;
+    text-decoration: underline;
 }
